@@ -1,0 +1,8 @@
+{
+  "searchEmployee": {
+    "employeeName": "Admin"
+  },
+  "invalidEmployee": {
+    "employeeName": "XYZRandomEmployee999"
+  }
+}
