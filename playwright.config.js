@@ -10,7 +10,7 @@ module.exports = defineConfig({
     reporter: [['list'], ['html', { open: 'never' }]],
     use: {
         baseURL: 'https://opensource-demo.orangehrmlive.com',
-        headless: false,
+        headless: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
