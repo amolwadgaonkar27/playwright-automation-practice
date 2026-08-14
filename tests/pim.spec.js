@@ -1,6 +1,5 @@
 const { test, expect } = require('../fixtures/baseFixture');
 const loadTestData = require('../utils/testDataLoader');
-
 const pimData = loadTestData('pimTestData.json');
 
 test.describe('PIM Tests', () => {

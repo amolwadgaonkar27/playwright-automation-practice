@@ -9,6 +9,10 @@ const MyInfoPage = require('../pages/MyInfoPage');
 const AdminPage = require('../pages/AdminPage');
 const TimePage = require('../pages/TimePage');
 const RecruitmentPage = require('../pages/RecruitmentPage');
+const ClaimPage = require('../pages/ClaimPage');
+const BuzzPage = require('../pages/BuzzPage');
+const PerformancePage = require('../pages/PerformancePage');
+const MaintenancePage = require('../pages/MaintenancePage');
 
 const test = base.extend({
     loginPage: async ({ page }, use) => {
@@ -45,6 +49,18 @@ const test = base.extend({
 
     recruitmentPage: async ({ page }, use) => {
         await use(new RecruitmentPage(page));
+    },
+    claimPage: async ({ page }, use) => {
+        await use(new ClaimPage(page));
+    },
+    buzzPage: async ({ page }, use) => {
+        await use(new BuzzPage(page));
+    },
+    performancePage: async ({ page }, use) => {
+        await use(new PerformancePage(page));
+    },
+    maintenancePage: async ({ page }, use) => {
+        await use(new MaintenancePage(page));
     }
 });
 

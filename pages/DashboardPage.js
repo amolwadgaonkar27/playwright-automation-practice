@@ -11,6 +11,8 @@ class DashboardPage {
         this.adminMenu = page.locator(dashboardLocators.adminMenu);
         this.timeMenu = page.locator(dashboardLocators.timeMenu);
         this.recruitmentMenu = page.locator(dashboardLocators.recruitmentMenu);
+        this.quicklaunchMenu = page.locator(dashboardLocators.quicklaunchMenu);
+        this.allocateLeaveButton = page.locator(dashboardLocators.Allocatebutton);
     }
 
     async isDashboardVisible() {
@@ -43,6 +45,14 @@ class DashboardPage {
 
     async openRecruitment() {
         await this.recruitmentMenu.click();
+    }
+
+    async openQuickLaunch() {
+        await this.quicklaunchMenu.click();
+    }
+
+    async clickAllocateLeave() {
+        await this.allocateLeaveButton.click();
     }
 }
 

@@ -6,7 +6,8 @@ const dashboardLocators = {
     myInfoMenu: 'h6.oxd-topbar-header-breadcrumb-link[href*="/pim/viewMyDetails"]',
     adminMenu: 'h6.oxd-topbar-header-breadcrumb-link[href*="/admin/viewAdminModule"]',
     timeMenu: 'h6.oxd-topbar-header-breadcrumb-link[href*="/time/viewTimeModule"]',
-    recruitmentMenu: 'h6.oxd-topbar-header-breadcrumb-module'
+    recruitmentMenu: 'h6.oxd-topbar-header-breadcrumb-module',
+    Allocatebutton: 'text=Allocate Leave',
 };
 
 module.exports = dashboardLocators;

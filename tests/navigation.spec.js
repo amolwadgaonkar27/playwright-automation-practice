@@ -62,4 +62,53 @@ test('TC010 - Verify user can navigate to My Info Page', async ({ dashboardPage,
         await expect(myInfoPage.personalDetailsTab).toBeVisible();
         await expect(myInfoPage.contactDetailsTab).toBeVisible();
     });
+
+test('TC011 - Verify user can navigate to Claim Page', async ({ dashboardPage, claimPage }) => {
+        await expect(claimPage.claimHeader).toHaveText('Claim');
+
+        expect(await claimPage.isClaimPageVisible()).toBeTruthy();
+
+        await expect(claimPage.claimListTab).toBeVisible();
+        await expect(claimPage.applyClaimTab).toBeVisible();
+    });
+
+test('TC012 - Verify user can navigate to Buzz Page', async ({ dashboardPage, buzzPage }) => {
+
+        await expect(buzzPage.buzzHeader).toHaveText('Buzz');
+
+        expect(await buzzPage.isBuzzPageVisible()).toBeTruthy();
+
+        await expect(buzzPage.feedTab).toBeVisible();
+        await expect(buzzPage.myBuzzTab).toBeVisible();
+    });
+
+test('TC013 - Verify user can navigate to Performance Page', async ({ dashboardPage, performancePage }) => {
+
+        await expect(performancePage.performanceHeader).toHaveText('Performance/Manager Reviews');
+
+        expect(await performancePage.isPerformancePageVisible()).toBeTruthy();
+
+        await expect(performancePage.dashboardTab).toBeVisible();
+        await expect(performancePage.manageReviewsTab).toBeVisible();
+    });
+
+test('TC014 - Verify user can navigate to Maintenance Page', async ({ dashboardPage, maintenancePage }) => {
+
+        await click(dashboardPage.maintenanceMenu);
+
+        await expect(maintenancePage.maintenanceHeader).toHaveText('Administrator Access');
+
+        expect(await maintenancePage.isMaintenancePageVisible()).toBeTruthy();
+    });
+
+test('TC015 - Verify user can navigate to Leave Page by clicking on Allocate leave button', async ({ dashboardPage, leavePage }) => {
+
+        await click(dashboardPage.allocateLeaveButton);
+
+        await expect(allocateLeaveButton.leaveHeader).toHaveText('Allocate Leave');
+        await expect(leavePage.leaveHeader).toHaveText('Leave');
+
+        expect(await leavePage.isLeavePageVisible()).toBeTruthy();
+    });
+
 });
