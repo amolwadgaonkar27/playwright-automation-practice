@@ -7,7 +7,13 @@ const dashboardLocators = {
     adminMenu: 'h6.oxd-topbar-header-breadcrumb-link[href*="/admin/viewAdminModule"]',
     timeMenu: 'h6.oxd-topbar-header-breadcrumb-link[href*="/time/viewTimeModule"]',
     recruitmentMenu: 'h6.oxd-topbar-header-breadcrumb-module',
-    Allocatebutton: 'text=Allocate Leave',
+    Assignbutton: 'text= Assign Leave',
+    Listbutton: 'text= Leave List',
+    timeSheetButton: 'text= Timesheets',
+    applyLeaveButton: 'text= Apply Leave',
+    myLeaveButton: 'text= My Leave',
+    myTimesheetButton: 'text= My Timesheet',
+
 };
 
 module.exports = dashboardLocators;

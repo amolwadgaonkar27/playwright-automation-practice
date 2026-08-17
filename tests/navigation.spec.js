@@ -103,12 +103,59 @@ test('TC014 - Verify user can navigate to Maintenance Page', async ({ dashboardP
 
 test('TC015 - Verify user can navigate to Leave Page by clicking on Allocate leave button', async ({ dashboardPage, leavePage }) => {
 
-        await click(dashboardPage.allocateLeaveButton);
+        await click(dashboardPage.assignLeaveButton);
 
-        await expect(allocateLeaveButton.leaveHeader).toHaveText('Allocate Leave');
+        await expect(dashboardPage.assignLeaveButton).toHaveText('Assign Leave');
         await expect(leavePage.leaveHeader).toHaveText('Leave');
 
         expect(await leavePage.isLeavePageVisible()).toBeTruthy();
     });
+
+test('TC016 - Verify user can navigate to Leave Page by clicking on Leave List button', async ({ dashboardPage, leavePage }) => {
+        await click(dashboardPage.leaveList);
+
+        await expect(dashboardPage.leaveListButton).toHaveText('Leave List');
+        await expect(leavePage.leaveHeader).toHaveText('Leave');
+
+        expect(await leavePage.isLeavePageVisible()).toBeTruthy();
+    });
+
+test('TC017 - Verify user can navigate to Timesheet Page by clicking on Timesheet button', async ({ dashboardPage, timePage }) => {
+        
+        await click(dashboardPage.timeSheet);
+
+        await expect(dashboardPage.timeSheetButton).toHaveText('Timesheets');
+        await expect(timePage.timeHeader).toHaveText('Time/Timesheets');
+
+        expect(await timePage.isTimePageVisible()).toBeTruthy();
+    });
+
+test('TC018 - Verify user can navigate to Leave page by clicking on Apply Leave button', async ({ dashboardPage, leavePage }) => {
+        
+        await click(dashboardPage.applyLeaveButton);
+
+        await expect(dashboardPage.applyLeaveButton).toHaveText('Apply Leave');
+        await expect(leavePage.leaveHeader).toHaveText('Leave');
+
+        expect(await leavePage.isLeavePageVisible()).toBeTruthy();
+    });
+
+test('TCO019 - Verify user can navigate to Leave page by clicking on My Leave button', async ({ dashboardPage, leavePage }) => {
+        await click(dashboardPage.myLeaveButton);
+
+        await expect(dashboardPage.myLeaveButton).toHaveText('My Leave');
+        await expect(leavePage.leaveHeader).toHaveText('Leave');
+
+        expect(await leavePage.isLeavePageVisible()).toBeTruthy();
+    });
+
+test('TC020 - Verify user can navigate to Timesheet page by clicking on My Timesheet button', async ({ dashboardPage, timePage }) => {
+        await click(dashboardPage.myTimesheetButton);
+
+        await expect(dashboardPage.myTimesheetButton).toHaveText('My Timesheet');
+        await expect(timePage.timeHeader).toHaveText('Time/Timesheets');
+
+        expect(await timePage.isTimePageVisible()).toBeTruthy();
+    }); 
 
 });

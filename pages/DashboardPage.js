@@ -12,7 +12,12 @@ class DashboardPage {
         this.timeMenu = page.locator(dashboardLocators.timeMenu);
         this.recruitmentMenu = page.locator(dashboardLocators.recruitmentMenu);
         this.quicklaunchMenu = page.locator(dashboardLocators.quicklaunchMenu);
-        this.allocateLeaveButton = page.locator(dashboardLocators.Allocatebutton);
+        this.assignLeaveButton = page.locator(dashboardLocators.Assignbutton);
+        this.leaveListButton = page.locator(dashboardLocators.leaveListButton);
+        this.timeSheetButton = page.locator(dashboardLocators.timeSheetButton);
+        this.applyLeaveButton = page.locator(dashboardLocators.applyLeaveButton);
+        this.myLeaveButton = page.locator(dashboardLocators.myLeaveButton);
+        this.myTimesheetButton = page.locator(dashboardLocators.myTimesheetButton);
     }
 
     async isDashboardVisible() {
@@ -51,9 +56,30 @@ class DashboardPage {
         await this.quicklaunchMenu.click();
     }
 
-    async clickAllocateLeave() {
-        await this.allocateLeaveButton.click();
+    async clickAssignLeave() {
+        await this.assignLeaveButton.click();
     }
+
+    async clickLeaveList() {
+        await this.leaveListButton.click
+    }
+
+    async clickTimeSheet() {
+        await this.timeSheetButton.click();
+    }
+
+    async clickApplyLeave() {
+        await this.applyLeaveButton.click();
+    }
+
+    async clickMyLeave() {
+        await this.myLeaveButton.click();
+    }
+
+    async clickMyTimesheet() {
+        await this.myTimesheetButton.click();
+    }   
+
 }
 
 module.exports = DashboardPage;
