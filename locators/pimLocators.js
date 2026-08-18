@@ -5,7 +5,10 @@ const pimLocators = {
     resetButton: 'button[type="reset"]',
     employeeTable: '.oxd-table-body',
     employeeRows: '.oxd-table-body .oxd-table-row',
-    noRecordsMessage: '.oxd-text--span'
+    noRecordsMessage: '.oxd-text--span',
+    employeeListButton: 'text=Employee List',
+    addEmployeeButton: 'text= Add Employee',
+    reportsButton: 'text=Reports'
 };
 
 module.exports = pimLocators;

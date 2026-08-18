@@ -156,6 +156,36 @@ test('TC020 - Verify user can navigate to Timesheet page by clicking on My Times
         await expect(timePage.timeHeader).toHaveText('Time/Timesheets');
 
         expect(await timePage.isTimePageVisible()).toBeTruthy();
-    }); 
+    });
+    
+test('TC021 - Verify user can open Nationalities section on Admin page', async ({ adminPage }) => {
+        await click(adminPage.nationalitiesButton);
+
+        await expect(adminPage.nationalitiesButton).toHaveText('Nationalities');
+    });
+
+test('TC022 - Verify user can open Corporate Branding section on Admin page', async ({ adminPage }) => {
+        await click(adminPage.corporateBrandingButton);
+
+        await expect(adminPage.corporateBrandingButton).toHaveText('Corporate Branding');
+    });
+
+test('TC023 - Verify user can open Employee List section on PIM page', async ({ pimPage }) => {
+        await click(pimPage.employeeListButton);
+
+        await expect(pimPage.employeeListButton).toHaveText('Employee List');
+    });
+
+test('TC024 - Verify user can open Add Employee section on PIM page', async ({ pimPage }) => {
+        await click(pimPage.addEmployeeButton);
+
+        await expect(pimPage.addEmployeeButton).toHaveText('Add Employee');
+    });
+
+test('TC025 - Verify user can open Reports section on PIM page', async ({ pimPage }) => {
+        await click(pimPage.reportsButton);
+
+        await expect(pimPage.reportsButton).toHaveText('Reports');
+    });
 
 });
