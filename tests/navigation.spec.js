@@ -188,4 +188,34 @@ test('TC025 - Verify user can open Reports section on PIM page', async ({ pimPag
         await expect(pimPage.reportsButton).toHaveText('Reports');
     });
 
+test('TC026 - Verify user can open Candidates section on Recruitment page', async ({ recruitmentPage }) => {
+        await click(recruitmentPage.candidatesButton);
+
+        await expect(recruitmentPage.candidatesButton).toHaveText('Candidates');
+    });
+
+test('TC027 - Verify user can open Vacancies section on Recruitment page', async ({ recruitmentPage }) => {
+        await click(recruitmentPage.vacanciesButton);
+
+        await expect(recruitmentPage.vacanciesButton).toHaveText('Vacancies');
+    });
+
+test('TC028 - Verify user can open Submit Claim section on Claim page', async ({ claimPage }) => {
+        await click(claimPage.submitClaimButton);
+
+        await expect(claimPage.submitClaimButton).toHaveText('Submit Claim');
+    });
+
+test('TC029 - Verify user can open My Claims section on Claim page', async ({ claimPage }) => {
+        await click(claimPage.myClaimsButton);
+
+        await expect(claimPage.myClaimsButton).toHaveText('My Claims');
+    });
+
+test('TC030 - Verify user can open Employee Claims section on Claim page', async ({ claimPage }) => {
+        await click(claimPage.employeeClaimsButton);
+
+        await expect(claimPage.employeeClaimsButton).toHaveText('Employee Claims');
+    });
+    
 });
