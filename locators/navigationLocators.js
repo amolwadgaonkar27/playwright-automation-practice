@@ -14,7 +14,10 @@ const navigationLocators = {
     vacanciesButton: 'text=Vacancies',
     nationalitiesButton: 'text=Nationalities',
     corporateBrandingButton: 'text=Corporate Branding',
-    employeeClaimsButton: 'text=Employee Claims'
+    employeeClaimsButton: 'text=Employee Claims',
+    assignClaimButton: 'text=Assign Claims',
+    myTrackersButton: 'text=My Trackers',
+    employeeTrackerButton: 'text=Employee Tracker',
 };
 
 module.exports = navigationLocators;

@@ -7,6 +7,7 @@ class ClaimPage {
         this.submitClaimButton = page.locator(navigationLocators.submitClaimButton);
         this.myClaimsButton = page.locator(navigationLocators.myClaimsButton);
         this.employeeClaimsButton = page.locator(navigationLocators.employeeClaimsButton);
+        this.assignClaimButton = page.locator(navigationLocators.assignClaimButton);
     }
 
     async isClaimPageVisible() {
@@ -23,6 +24,10 @@ class ClaimPage {
 
     async clickEmployeeClaimsButton() {
         await this.employeeClaimsButton.click();
+    }
+
+    async clickAssignClaimButton() {
+        await this.assignClaimButton.click();
     }
 }
 

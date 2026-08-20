@@ -78,7 +78,7 @@ class DashboardPage {
 
     async clickMyTimesheet() {
         await this.myTimesheetButton.click();
-    }   
+    }
 
 }
 

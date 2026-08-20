@@ -217,5 +217,24 @@ test('TC030 - Verify user can open Employee Claims section on Claim page', async
 
         await expect(claimPage.employeeClaimsButton).toHaveText('Employee Claims');
     });
-    
+
+test('TC031 - Verify user can open Assign claim section on Claim page', async ({ claimPage }) => {
+        await click(claimPage.assignClaimButton);
+
+        await expect(claimPage.assignClaimButton).toHaveText('Assign Claim');
+    });
+
+test('TC032 - Verify user can open My Trackers section on Performance page', async ({ performancePage }) => {
+        await click(performancePage.myTrackersButton);
+
+        await expect(performancePage.myTrackersButton).toHaveText('My Trackers');
+    });
+
+test('TC033 - Verify user can open Employee Tracker section on Performance page', async ({ performancePage }) => {
+        await click(performancePage.employeeTrackerButton);
+
+        await expect(performancePage.employeeTrackerButton).toHaveText('Employee Tracker');
+    });
+
+
 });
