@@ -29,4 +29,54 @@ test('TC035 - Verify that Job dropdown is clickable on Admin Page', async ({ das
 
         await expect(adminPage.jobDropdown).toBeVisible();
     });
+
+test('TC036 - Verify that Organization dropdown is clickable on Admin Page', async ({ dashboardPage, adminPage }) => {
+        await dashboardPage.openAdmin();
+
+        await expect(adminPage.adminHeader).toHaveText('Admin/User Management');
+
+        await adminPage.clickOrganizationDropdown();
+
+        await expect(adminPage.organizationDropdown).toBeVisible();
+    });
+
+test('TC037 - Verify that Qualifications dropdown is clickable on Admin Page', async ({ dashboardPage, adminPage }) => {
+        await dashboardPage.openAdmin();
+
+        await expect(adminPage.adminHeader).toHaveText('Admin/User Management');
+
+        await adminPage.clickQualificationsDropdown();
+
+        await expect(adminPage.qualificationsDropdown).toBeVisible();
+    });
+
+test('TC038 - Verify that Configuration dropdown is clickable on Admin Page', async ({ dashboardPage, adminPage }) => {
+        await dashboardPage.openAdmin();
+
+        await expect(adminPage.adminHeader).toHaveText('Admin/User Management');
+
+        await adminPage.clickConfigurationDropdown();
+
+        await expect(adminPage.configurationDropdown).toBeVisible();
+    });
+
+test('TC039 - Verify that Configuration dropdown is clickable on PIM Page', async ({ dashboardPage, pimPage }) => {
+        await dashboardPage.openPIM();
+
+        await expect(pimPage.pimHeader).toHaveText('PIM');
+
+        await pimPage.clickConfigurationDropdown();
+
+        await expect(pimPage.configurationDropdown).toBeVisible();
+    });
+
+test('TC040 - Verify that Entitlements dropdown is clickable on Leave Page', async ({ dashboardPage, leavePage }) => {
+        await dashboardPage.openLeave();
+
+        await expect(leavePage.leaveHeader).toHaveText('Leave');
+
+        await leavePage.clickEntitlementsDropdown();
+
+        await expect(leavePage.entitlementsDropdown).toBeVisible();
+    });
 });

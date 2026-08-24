@@ -11,6 +11,8 @@ class PimPage {
         this.employeeListButton = page.locator(pimLocators.employeeListButton);
         this.addEmployeeButton = page.locator(pimLocators.addEmployeeButton);
         this.reportsButton = page.locator(pimLocators.reportsButton);
+        this.configurationDropdown = page.locator(pimLocators.configurationDropdown);
+        this.entitlementsDropdown = page.locator(pimLocators.entitlementsDropdown);
     }
 
     async searchEmployee(employeeName) {
@@ -41,6 +43,14 @@ class PimPage {
 
     async clickReports() {
         await this.reportsButton.click();
+    }
+
+    async clickConfigurationDropdown() {
+        await this.configurationDropdown.click();
+    }
+
+    async clickEntitlementsDropdown() {
+        await this.entitlementsDropdown.click();
     }
 }
 

@@ -9,6 +9,9 @@ class AdminPage {
         this.corporateBrandingButton = page.locator(navigationLocators.corporateBrandingButton);
         this.userManagementDropdown = page.locator(dropDownLocators.userManagementDropdown);
         this.jobDropdown = page.locator(dropDownLocators.jobDropdown);
+        this.organizationDropdown = page.locator(dropDownLocators.organizationDropdown);
+        this.qualificationsDropdown = page.locator(dropDownLocators.qualificationsDropdown);
+        this.configurationDropdown = page.locator(dropDownLocators.configurationDropdown);
     }
 
     async isAdminPageVisible() {
@@ -29,6 +32,18 @@ class AdminPage {
 
     async clickJobDropdown() {
         await this.jobDropdown.click();
+    }
+
+    async clickOrganizationDropdown() {
+        await this.organizationDropdown.click();
+    }
+
+    async clickQualificationsDropdown() {
+        await this.qualificationsDropdown.click();
+    }
+
+    async clickConfigurationDropdown() {
+        await this.configurationDropdown.click();
     }
 }
 
