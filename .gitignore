@@ -7,3 +7,9 @@ playwright/.cache/
 
 .DS_Store
 .env
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

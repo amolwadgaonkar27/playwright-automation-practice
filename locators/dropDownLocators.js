@@ -5,6 +5,12 @@ const dropDownLocators = {
     qualificationsDropdown: 'text=Qualifications',
     configurationDropdown: 'text=Configuration',
     entitlementsDropdown: 'text=Entitlements',
+    leaveMenu: page => page.getByRole('link', { name: 'Leave' }),
+    reportsDropdown: page => page.getByRole('listitem').filter({ hasText: 'Reports' }),
+    configureDropdown: page => page.getByRole('listitem').filter({ hasText: 'Configure' }),
+    timesheetsDropdown: page => page.getByRole('listitem').filter({ hasText: 'Timesheets' }),
+    attendanceDropdown: page => page.getByRole('listitem').filter({ hasText: 'Attendance' }),
+    reportsDropdown: page => page.getByRole('listitem').filter({ hasText: 'Reports' }),
 };
 
 module.exports = dropDownLocators;

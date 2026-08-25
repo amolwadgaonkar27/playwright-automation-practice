@@ -79,4 +79,44 @@ test('TC040 - Verify that Entitlements dropdown is clickable on Leave Page', asy
 
         await expect(leavePage.entitlementsDropdown).toBeVisible();
     });
+
+test('TC041 - Verify that Reports dropdown is clickable on Leave page', async({ leavePage }) => {
+        await leavePage.openLeave();
+
+        await leavePage.clickReportsDropdown();
+
+        await expect(leavePage.reportsDropdown).toBeVisible();
+    });
+
+test('TC-042 - Verify that Configure dropdown is clickable on Leave page', async({ leavePage }) => {
+        await leavePage.openLeave();
+
+        await leavePage.clickConfigureDropdown();
+
+        await expect(leavePage.configureDropdown).toBeVisible();
+    });
+
+test('TC043 - Verify that Timesheets dropdown is clickable on Time page', async({ timePage }) => {
+        await timePage.openTime();
+
+        await timePage.clickTimesheetsDropdown();
+
+        await expect(timePage.timesheetsDropdown).toBeVisible();
+    });
+
+test('TC044 - Verify that Attendance dropdown is clickable on Time page', async({ timePage }) => {
+        await timePage.openTime();
+
+        await timePage.clickAttendanceDropdown();
+
+        await expect(timePage.attendanceDropdown).toBeVisible();
+    });
+
+test('TC045 - Verify that Reports dropdown is clickable on Time page', async({ timePage }) => {
+        await timePage.openTime();
+
+        await timePage.clickReportsDropdown();
+
+        await expect(timePage.reportsDropdown).toBeVisible();
+    });
 });

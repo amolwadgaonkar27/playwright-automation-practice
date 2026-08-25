@@ -14,6 +14,5 @@ module.exports = defineConfig({
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
-        viewport: { width: 1280, height: 720 }
     }
 });
