@@ -1,4 +1,5 @@
 const { test, expect } = require('../fixtures/baseFixture');
+const TimePage = require('../pages/TimePage');
 const loadTestData = require('../utils/testDataLoader');
 
 test.describe('Dropdown Tests', () => {
@@ -119,4 +120,30 @@ test('TC045 - Verify that Reports dropdown is clickable on Time page', async({ t
 
         await expect(timePage.reportsDropdown).toBeVisible();
     });
+
+test('TC046 - Verify that Project Info dropdown is clickable on Time page', async({ timePage }) => {
+        await timePage.openTime();
+
+        await timePage.clickProjectInfoDropdown();
+
+        await expect(timePage.projectInfoDropdown).toBeVisible();
+    });
+
+test('TC047 - Verify that Configure dropdown is clickable on Performance page',async({ performancePage }) => {
+        await performancePage.openPerformance();
+
+        await performancePage.clickConfigureDropdown();
+
+        await expect(performancePage.configureDropdown).toBeVisible();
+    });
+
+test('TC048 - Verify that Manage Reviews dropdown is clickable on Performance page', async({ performancePage }) => {
+        await performancePage.openPerformance();
+
+        await performancePage.clickManageReviewsDropdown();
+
+        await expect(performancePage.manageReviewsDropdown).toBeVisible();
+}
+
+)
 });

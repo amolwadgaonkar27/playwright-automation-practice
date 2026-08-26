@@ -1,3 +1,5 @@
 const timeLocators = {
-    timeMenu: 'link=Time',
+    timeMenu: page => page.getByRole('link', { name: 'Time' }),
 }
+
+module.exports = timeLocators;

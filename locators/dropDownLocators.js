@@ -11,6 +11,9 @@ const dropDownLocators = {
     timesheetsDropdown: page => page.getByRole('listitem').filter({ hasText: 'Timesheets' }),
     attendanceDropdown: page => page.getByRole('listitem').filter({ hasText: 'Attendance' }),
     reportsDropdown: page => page.getByRole('listitem').filter({ hasText: 'Reports' }),
+    projectInfoDropdown: page => page.getByRole('listitem').filter({ hasText: 'Project Info' }),
+    configureDropdown: page => page.getByRole('listitem').filter({ hasText:'Configure' }),
+    manageReviewsDropdown: page => page.getByRole('listitem').filter({ hasText:'Manage Reviews' })
 };
 
 module.exports = dropDownLocators;

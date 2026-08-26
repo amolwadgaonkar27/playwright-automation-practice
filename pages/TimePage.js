@@ -1,14 +1,16 @@
 const navigationLocators = require('../locators/navigationLocators');
 const dropDownLocators = require('../locators/dropdownLocators');
+const timeLocators = require('../locators/timeLocators')
 
 class TimePage {
     constructor(page) {
         this.page = page;
         this.timePageHeader = page.locator(navigationLocators.timeHeader);
         this.timeSheetDropdown = dropDownLocators.timesheetsDropdown(page);
-        this.timeMenu = navigationLocators.timeMenu(page);
+        this.timeMenu = timeLocators.timeMenu(page);
         this.attendanceDropdown = dropDownLocators.attendanceDropdown(page);
         this.reportsDropdown = dropDownLocators.reportsDropdown(page);
+        this.projectInfoDropdown = dropDownLocators.projectInfoDropdown(page);
     }
 
     async isTimePageVisible() {
@@ -19,7 +21,7 @@ class TimePage {
         await this.timeSheetDropdown.click();
     }
 
-    async clickTimeMenu() {
+    async openTime() {
         await this.timeMenu.click();
     }
 
@@ -29,6 +31,10 @@ class TimePage {
 
     async clickReportsDropdown() {
         await this.reportsDropdown.click();
+    }
+
+    async clickProjectInfoDropdown() {
+        await this.projectInfoDropdown.click();
     }
 }
 
