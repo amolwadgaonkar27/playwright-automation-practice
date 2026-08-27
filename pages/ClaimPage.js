@@ -1,4 +1,6 @@
+const dropDownLocators = require('../locators/dropdownLocators');
 const navigationLocators = require('../locators/navigationLocators');
+const claimLocators = require('../locators/claimLocators')
 
 class ClaimPage {
     constructor(page) {
@@ -8,6 +10,8 @@ class ClaimPage {
         this.myClaimsButton = page.locator(navigationLocators.myClaimsButton);
         this.employeeClaimsButton = page.locator(navigationLocators.employeeClaimsButton);
         this.assignClaimButton = page.locator(navigationLocators.assignClaimButton);
+        this.configurationDropdown = dropDownLocators.configurationDropdown(page);
+        this.claimMenu = claimLocators.claimMenu(page);
     }
 
     async isClaimPageVisible() {
@@ -28,6 +32,14 @@ class ClaimPage {
 
     async clickAssignClaimButton() {
         await this.assignClaimButton.click();
+    }
+
+    async clickConfigurationDropdown() {
+        await this.configurationDropdown.click();
+    }
+
+    async openClaim() {
+        await this.claimMenu.click();
     }
 }
 

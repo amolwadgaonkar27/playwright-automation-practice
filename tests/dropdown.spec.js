@@ -1,5 +1,4 @@
 const { test, expect } = require('../fixtures/baseFixture');
-const TimePage = require('../pages/TimePage');
 const loadTestData = require('../utils/testDataLoader');
 
 test.describe('Dropdown Tests', () => {
@@ -143,7 +142,15 @@ test('TC048 - Verify that Manage Reviews dropdown is clickable on Performance pa
         await performancePage.clickManageReviewsDropdown();
 
         await expect(performancePage.manageReviewsDropdown).toBeVisible();
-}
+});
 
-)
+test('TC049 - Verify that Configuration dropdown is clickable on Claim Page', async({ claimPage }) => {
+        await claimPage.openClaim();
+
+        await claimPage.clickConfigurationDropdown();
+
+        await expect(claimPage.configurationDropdown).toBeVisible();
+
+})
+
 });
