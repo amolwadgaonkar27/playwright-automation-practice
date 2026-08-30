@@ -4,7 +4,7 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
-/testdata/
+testdata/
 
 .DS_Store
 .env
