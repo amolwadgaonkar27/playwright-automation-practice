@@ -3,3 +3,5 @@ const adminLocators = {
     corporateBrandingButton: 'text=Corporate Branding',
 
 };
+
+module.exports = adminLocators;
