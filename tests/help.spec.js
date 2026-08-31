@@ -1,4 +1,13 @@
-import { test, expect } from '@playwright/test';
+const { test, expect } = require('../fixtures/baseFixture');
+
+test.describe('Dropdown Tests', () => {
+    test.beforeEach(async ({ loginPage, dashboardPage }) => {
+        await loginPage.goto();
+
+        await loginPage.login('Admin', 'admin123');
+
+        await expect(dashboardPage.dashboardHeader).toHaveText('Dashboard');
+    });
 
 test('TC050 - Verify that help button is clickable on Admin page', async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -71,4 +80,4 @@ test('TC058 - Verify that help button is clickable on Directory page', async ({ 
   await page.getByTitle('Help').click();
   const page1 = await page1Promise;
 });
-
+});
