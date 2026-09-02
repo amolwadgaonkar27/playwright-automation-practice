@@ -157,4 +157,34 @@ test.describe('Dropdown Tests', () => {
         await page.getByLabel('Topbar Menu').getByText('User Management').click();
         await page.getByRole('listitem').filter({ hasText: /^Users$/ }).click();
     });
+
+    test('TC062 - Verify that Job Titles option from dropdown is clickable on Admin Page', async ({ page }) => {
+        await page.getByRole('link', { name: 'Admin' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
+        await page.getByRole('menuitem', { name: 'Job Titles' }).click();
+    });
+
+    test('TC063 - Verify that Pay Grades  option from dropdown is clickable on Admin Page', async ({ page }) => {
+        await page.getByRole('link', { name: 'Admin' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
+        await page.getByRole('listitem').filter({ hasText: /^Pay Grades$/ }).click();
+    });
+
+    test('TC064 - Verify that Employment Status option from dropdown is clickable on Admin Page', async ({ page }) => {
+        await page.getByRole('link', { name: 'Admin' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
+        await page.getByRole('listitem').filter({ hasText: /^Employment Status$/ }).click();
+    });
+
+    test('TC065 - Verify that Job Categories option from dropdown is clickable on Admin Page', async ({ page }) => {
+        await page.getByRole('link', { name: 'Admin' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
+        await page.getByRole('listitem').filter({ hasText: /^Job Categories$/ }).click();
+    });
+
+    test('TC066 - Verify that Work Shifts option from dropdown is clickable on Admin Page', async ({ page }) => {
+        await page.getByRole('link', { name: 'Admin' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
+        await page.getByRole('listitem').filter({ hasText: /^Work Shifts$/ }).click();
+    });
 });
