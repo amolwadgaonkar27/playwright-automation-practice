@@ -1,9 +1,16 @@
 const { test, expect } = require('../fixtures/baseFixture');
 
+const loadTestData = require('../utils/testDataLoader');
+const loginData = loadTestData('loginTestData.json');
+
 test.describe('Help Tests', () => {
   test.beforeEach(async ({ loginPage, dashboardPage }) => {
     await loginPage.goto();
-    await loginPage.login('Admin', 'admin123');
+    await loginPage.login(
+      loginData.validLogin.username,
+      loginData.validLogin.password
+    );
+
     await expect(dashboardPage.dashboardHeader).toHaveText('Dashboard');
   });
 

@@ -11,7 +11,7 @@ class LoginPage {
     }
 
     async goto() {
-        await this.page.goto('/web/index.php/auth/login');
+        await this.page.goto('');
     }
 
     async login(username, password) {
