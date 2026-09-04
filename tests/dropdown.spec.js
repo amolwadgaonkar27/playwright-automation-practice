@@ -3,6 +3,8 @@ const { test, expect } = require('../fixtures/baseFixture');
 const loadTestData = require('../utils/testDataLoader');
 const loginData = loadTestData('loginTestData.json');
 
+import { AdminPage } from '../pages/AdminPage';
+
 test.describe('Dropdown Tests', () => {
     test.beforeEach(async ({ loginPage, dashboardPage }) => {
         await loginPage.goto();
@@ -158,68 +160,98 @@ test.describe('Dropdown Tests', () => {
 
     })
 
-    test('TC061 - Verify that Users option from dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByLabel('Topbar Menu').getByText('User Management').click();
-        await page.getByRole('listitem').filter({ hasText: /^Users$/ }).click();
+    test('TC061 - Verify that Users option from User Management dropdown is clickable on Admin Page', async ({ page }) => {
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickUserManagementOption();
+        await Admin.clickUsersOption();
     });
 
     test('TC062 - Verify that Job Titles option from Job dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-        await page.getByRole('menuitem', { name: 'Job Titles' }).click();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickJobOption();
+        await Admin.clickJobTitlesOption();
     });
 
-    test('TC063 - Verify that Pay Grades  option from Job dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Pay Grades$/ }).click();
+    test('TC063 - Verify that Pay Grades option from Job dropdown is clickable on Admin Page', async ({ page }) => {
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickJobOption();
+        await Admin.clickPayGradesOption();
     });
 
     test('TC064 - Verify that Employment Status option from Job dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Employment Status$/ }).click();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickJobOption();
+        await Admin.clickEmploymentStatusOption();
     });
 
     test('TC065 - Verify that Job Categories option from Job dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Job Categories$/ }).click();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickJobOption();
+        await Admin.clickJobCategoriesOption();
     });
 
     test('TC066 - Verify that Work Shifts option from Job dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Work Shifts$/ }).click();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickJobOption();
+        await Admin.clickWorkShiftsOption();
     });
 
     test('TC067 - Verify that General Information option from Organization dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Organization' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^General Information$/ }).click();
-        await expect(page.getByRole('heading', { name: 'General Information' })).toBeVisible();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickOrganizationOption();
+        await Admin.clickGeneralInformationOption();
+        await expect(Admin.generalInformationHeader).toBeVisible();
     });
 
     test('TC068 - Verify that Locations option from Organization dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Organization' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Locations$/ }).click();
-        await expect(page.getByRole('heading', { name: 'Locations' })).toBeVisible();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickOrganizationOption();
+        await Admin.clickLocationsOption();
+        await expect(Admin.locationsHeader).toBeVisible();
     });
 
     test('TC069 - Verify that Structure option from Organization dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Organization' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Structure$/ }).click();
-        await expect(page.getByRole('heading', { name: 'Organization Structure' })).toBeVisible();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickOrganizationOption();
+        await Admin.clickStructureOption();
+        await expect(Admin.structureHeader).toBeVisible();
     });
 
     test('TC070 - Verify that Skills option from Qualifications dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Qualifications' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Skills$/ }).click();
-        await expect(page.getByRole('heading', { name: 'Skills' })).toBeVisible();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickQualificationsOption();
+        await Admin.clickSkillsOption();
+        await expect(Admin.skillsHeader).toBeVisible();
     });
 
     test('TC071 - Verify that Education option from Qualifications dropdown is clickable on Admin Page', async ({ page }) => {
