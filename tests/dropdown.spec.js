@@ -253,11 +253,14 @@ test.describe('Dropdown Tests', () => {
         await Admin.clickSkillsOption();
         await expect(Admin.skillsHeader).toBeVisible();
     });
-
+ 
     test('TC071 - Verify that Education option from Qualifications dropdown is clickable on Admin Page', async ({ page }) => {
-        await page.getByRole('link', { name: 'Admin' }).click();
-        await page.getByRole('listitem').filter({ hasText: 'Qualifications' }).click();
-        await page.getByRole('listitem').filter({ hasText: /^Education$/ }).click();
-        await expect(page.getByRole('heading', { name: 'Education' })).toBeVisible();
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickQualificationsOption();
+        await Admin.clickEducationOption();
+        await expect(Admin.educationHeader).toBeVisible();
     });
 });

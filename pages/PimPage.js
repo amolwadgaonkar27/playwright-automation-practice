@@ -1,6 +1,6 @@
 const pimLocators = require('../locators/pimLocators');
 
-class PimPage {
+exports.PimPage = class PimPage {
     constructor(page) {
         this.page = page;
         this.employeeNameInput = page.locator(pimLocators.employeeNameInput);
@@ -13,6 +13,15 @@ class PimPage {
         this.reportsButton = page.locator(pimLocators.reportsButton);
         this.configurationDropdown = page.locator(pimLocators.configurationDropdown);
         this.entitlementsDropdown = page.locator(pimLocators.entitlementsDropdown);
+        this.pimOption = page.getByRole('link', { name: 'PIM' });
+        this.helpOption = page.getByTitle('Help');
+    }
+
+    async clickHelpOption(){
+        await this.helpOption.click();
+    }
+    async clickPimOption(){
+        await this.pimOption.click();
     }
 
     async searchEmployee(employeeName) {
@@ -53,5 +62,3 @@ class PimPage {
         await this.entitlementsDropdown.click();
     }
 }
-
-module.exports = PimPage;

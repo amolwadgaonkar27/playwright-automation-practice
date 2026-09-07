@@ -31,8 +31,15 @@ exports.AdminPage = class AdminPage {
         this.qualificationsOption = page.getByRole('listitem').filter({ hasText: 'Qualifications' });
         this.skillsOption = page.getByRole('listitem').filter({ hasText: /^Skills$/ });
         this.skillsHeader = page.getByRole('heading', { name: 'Skills' });
+        this.educationOption = page.getByRole('listitem').filter({ hasText: /^Education$/ });
+        this.educationHeader = page.getByRole('heading', { name: 'Education' });
+        this.helpOption = page.getByTitle('Help');
     }
 
+    async clickHelpOption(){
+        this.helpOption.click();
+    }
+    
     async clickAdminOption() {
         await this.adminOption.click();
     }
@@ -109,6 +116,13 @@ exports.AdminPage = class AdminPage {
         return await this.skillsHeader.isVisible();
     }
 
+    async clickEducationOption(){
+        await this.educationOption.click();
+    }
+
+    async isEducationHeaderVisible(){
+        return this.educationHeader.isVisible();
+    }
     async isAdminPageVisible() {
         return await this.adminHeader.isVisible();
     }

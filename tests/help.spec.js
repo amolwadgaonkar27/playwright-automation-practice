@@ -1,4 +1,8 @@
 const { test, expect } = require('../fixtures/baseFixture');
+import { AdminPage } from '../pages/AdminPage';
+import { PimPage } from '../pages/PimPage';
+import { LeavePage } from '../pages/LeavePage';
+import { TimePage } from '../pages/TimePage';
 
 const loadTestData = require('../utils/testDataLoader');
 const loginData = loadTestData('loginTestData.json');
@@ -15,30 +19,38 @@ test.describe('Help Tests', () => {
   });
 
   test('TC050 - Verify that help button is clickable on Admin page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Admin' }).click();
+    
+    const Admin = new AdminPage(page);
+    await Admin.clickAdminOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Admin.helpOption.click();
     const page1 = await page1Promise;
   });
 
   test('TC051 - Verify that help button is clickable on PIM page', async ({ page }) => {
-    await page.getByRole('link', { name: 'PIM' }).click();
+
+    const Pim = new PimPage(page);
+    await Pim.clickPimOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Pim.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC052 - Verify that help button is clickable on Leave page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Leave' }).click();
+    
+    const Leave = new LeavePage(page);
+    await Leave.clickLeaveOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Leave.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC053 - Verify that help button is clickable on Time page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Time' }).click();
+    
+    const Time = new TimePage(page);
+    await Time.clickTimeOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Time.clickHelpOption();
     const page1 = await page1Promise;
   });
 
