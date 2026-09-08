@@ -1,11 +1,21 @@
 const navigationLocators = require('../locators/navigationLocators');
 
-class RecruitmentPage {
+exports.RecruitmentPage = class RecruitmentPage {
     constructor(page) {
         this.page = page;
         this.recruitmentHeader = page.locator(navigationLocators.recruitmentHeader);
         this.candidatesButton = page.locator(navigationLocators.candidatesButton);
         this.vacanciesButton = page.locator(navigationLocators.vacanciesButton);
+        this.recruitmentOption = page.getByRole('link', { name: 'Recruitment' });
+        this.helpOption = page.getByTitle('Help');
+    }
+
+    async clickHelpOption() {
+        await this.helpOption.click();
+    }
+
+    async clickRecruitmentOption() {
+        await this.recruitmentOption.click();
     }
 
     async isRecruitmentPageVisible() {
@@ -20,5 +30,3 @@ class RecruitmentPage {
         await this.vacanciesButton.click();
     }
 }
-
-module.exports = RecruitmentPage;

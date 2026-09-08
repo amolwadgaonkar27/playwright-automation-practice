@@ -8,6 +8,16 @@ class DirectoryPage {
         this.resetButton = page.locator(directoryLocators.resetButton);
         this.directoryCards = page.locator(directoryLocators.directoryCards);
         this.directoryHeader = page.locator(directoryLocators.directoryHeader);
+        this.directoryOption = page.getByRole('link', { name: 'Directory' });
+        this.helpOption = page.getByTitle('Help');
+    }
+
+    async clickHelpOption() {
+        await this.helpOption.click();
+    }
+
+    async clickDirectoryOption() {
+        await this.directoryOption.click();
     }
 
     async searchEmployee(employeeName) {

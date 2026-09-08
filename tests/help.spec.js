@@ -3,6 +3,11 @@ import { AdminPage } from '../pages/AdminPage';
 import { PimPage } from '../pages/PimPage';
 import { LeavePage } from '../pages/LeavePage';
 import { TimePage } from '../pages/TimePage';
+import { RecruitmentPage } from '../pages/RecruitmentPage';
+import MyInfoPage from '../pages/MyInfoPage';
+import PerformancePage from '../pages/PerformancePage';
+import DashboardPage from '../pages/DashboardPage';
+import DirectoryPage from '../pages/DirectoryPage';
 
 const loadTestData = require('../utils/testDataLoader');
 const loginData = loadTestData('loginTestData.json');
@@ -19,7 +24,7 @@ test.describe('Help Tests', () => {
   });
 
   test('TC050 - Verify that help button is clickable on Admin page', async ({ page }) => {
-    
+
     const Admin = new AdminPage(page);
     await Admin.clickAdminOption();
     const page1Promise = page.waitForEvent('popup');
@@ -37,7 +42,7 @@ test.describe('Help Tests', () => {
   });
 
   test('TC052 - Verify that help button is clickable on Leave page', async ({ page }) => {
-    
+
     const Leave = new LeavePage(page);
     await Leave.clickLeaveOption();
     const page1Promise = page.waitForEvent('popup');
@@ -46,7 +51,7 @@ test.describe('Help Tests', () => {
   });
 
   test('TC053 - Verify that help button is clickable on Time page', async ({ page }) => {
-    
+
     const Time = new TimePage(page);
     await Time.clickTimeOption();
     const page1Promise = page.waitForEvent('popup');
@@ -55,37 +60,47 @@ test.describe('Help Tests', () => {
   });
 
   test('TC054 - Verify that help button is clickable on Recruitment page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Recruitment' }).click();
+
+    const Recruitment = new RecruitmentPage(page);
+    await Recruitment.clickRecruitmentOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Recruitment.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC055 - Verify that help button is clickable on My Info page', async ({ page }) => {
-    await page.getByRole('link', { name: 'My Info' }).click();
+
+    const Myinfo = new MyInfoPage(page);
+    await Myinfo.clickMyInfoOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Myinfo.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC056 - Verify that help button is clickable on Performance page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Performance' }).click();
+
+    const Performance = new PerformancePage(page);
+    await Performance.clickPerformanceOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Performance.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC057 - Verify that help button is clickable on Dashboard page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Dashboard' }).click();
+
+    const Dashboard = new DashboardPage(page);
+    await Dashboard.clickDashboardOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Dashboard.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC058 - Verify that help button is clickable on Directory page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Directory' }).click();
+
+    const Directory = new DirectoryPage(page);
+    await Directory.clickDirectoryOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Directory.clickHelpOption();
     const page1 = await page1Promise;
   });
 

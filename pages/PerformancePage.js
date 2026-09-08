@@ -11,6 +11,16 @@ class PerformancePage {
         this.configureDropdown = dropDownLocators.configureDropdown(page);
         this.performanceMenu = performanceLocators.performanceMenu(page);
         this.manageReviewsDropdown = dropDownLocators.manageReviewsDropdown(page);
+        this.performanceOption = page.getByRole('link', { name: 'Performance' });
+        this.helpOption = page.getByTitle('Help')
+    }
+
+    async clickHelpOption() {
+        await this.helpOption.click();
+    }
+
+    async clickPerformanceOption() {
+        await this.performanceOption.click();
     }
 
     async isPerformancePageVisible() {
@@ -33,7 +43,7 @@ class PerformancePage {
         await this.performanceMenu.click();
     }
 
-    async clickManageReviewsDropdown(){
+    async clickManageReviewsDropdown() {
         await this.manageReviewsDropdown.click();
     }
 

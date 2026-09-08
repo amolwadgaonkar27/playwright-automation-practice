@@ -18,6 +18,16 @@ class DashboardPage {
         this.applyLeaveButton = page.locator(dashboardLocators.applyLeaveButton);
         this.myLeaveButton = page.locator(dashboardLocators.myLeaveButton);
         this.myTimesheetButton = page.locator(dashboardLocators.myTimesheetButton);
+        this.dashboardOption = page.getByRole('link', { name: 'Dashboard' });
+        this.helpOption = page.getByTitle('Help');
+    }
+
+    async clickHelpOption() {
+        await this.helpOption.click();
+    }
+
+    async clickDashboardOption() {
+        await this.dashboardOption.click();
     }
 
     async isDashboardVisible() {
