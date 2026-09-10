@@ -34,12 +34,36 @@ exports.AdminPage = class AdminPage {
         this.educationOption = page.getByRole('listitem').filter({ hasText: /^Education$/ });
         this.educationHeader = page.getByRole('heading', { name: 'Education' });
         this.helpOption = page.getByTitle('Help');
+        this.licensesOption = page.getByRole('listitem').filter({ hasText: /^Licenses$/ });
+        this.licensesHeader = page.getByRole('heading', { name: 'Licenses' });
+        this.languagesOption = page.getByRole('listitem').filter({ hasText: /^Languages$/ });
+        this.membershipsOption = page.getByRole('listitem').filter({ hasText: /^Memberships$/ });
+        this.membershipsHeader = page.getByRole('heading', { name: 'Memberships' });
     }
 
-    async clickHelpOption(){
+    async isMembershipsOptionVisible(){
+        return await this.membershipsHeader.isVisible();
+    }
+
+    async clickMembershipsOption(){
+        await this.membershipsOption.click();
+    }
+
+    async clickLanguagesOption() {
+        await this.languagesOption.click();
+    }
+
+    async isLicensesHeaderVisible() {
+        return await this.licensesHeader.isVisible();
+    }
+    async clickLicensesOption() {
+        await this.licensesOption.click();
+    }
+
+    async clickHelpOption() {
         this.helpOption.click();
     }
-    
+
     async clickAdminOption() {
         await this.adminOption.click();
     }
@@ -96,31 +120,31 @@ exports.AdminPage = class AdminPage {
         return await this.locationsHeader.isVisible();
     }
 
-    async clickStructureOption(){
+    async clickStructureOption() {
         await this.structureOption.click();
     }
 
-    async isStructureHeaderVisible(){
+    async isStructureHeaderVisible() {
         return await this.structureHeader.isVisible();
     }
 
-    async clickQualificationsOption(){
+    async clickQualificationsOption() {
         await this.qualificationsOption.click();
     }
 
-    async clickSkillsOption(){
+    async clickSkillsOption() {
         await this.skillsOption.click();
     }
 
-    async isSkillsHeaderVisible(){
+    async isSkillsHeaderVisible() {
         return await this.skillsHeader.isVisible();
     }
 
-    async clickEducationOption(){
+    async clickEducationOption() {
         await this.educationOption.click();
     }
 
-    async isEducationHeaderVisible(){
+    async isEducationHeaderVisible() {
         return this.educationHeader.isVisible();
     }
     async isAdminPageVisible() {

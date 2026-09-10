@@ -8,6 +8,8 @@ import MyInfoPage from '../pages/MyInfoPage';
 import PerformancePage from '../pages/PerformancePage';
 import DashboardPage from '../pages/DashboardPage';
 import DirectoryPage from '../pages/DirectoryPage';
+import ClaimPage from '../pages/ClaimPage';
+import BuzzPage from '../pages/BuzzPage';
 
 const loadTestData = require('../utils/testDataLoader');
 const loginData = loadTestData('loginTestData.json');
@@ -105,16 +107,20 @@ test.describe('Help Tests', () => {
   });
 
   test('TC059 - Verify that help button is clickable on Claim page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Claim' }).click();
+    
+    const Claim = new ClaimPage(page);
+    await Claim.clickClaimOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Claim.clickHelpOption();
     const page1 = await page1Promise;
   });
 
   test('TC060 - Verify that help button is clickable on Buzz page', async ({ page }) => {
-    await page.getByRole('link', { name: 'Buzz' }).click();
+    
+    const Buzz = new BuzzPage(page);
+    await Buzz.clickBuzzOption();
     const page1Promise = page.waitForEvent('popup');
-    await page.getByTitle('Help').click();
+    await Buzz.clickHelpOption();
     const page1 = await page1Promise;
   });
 

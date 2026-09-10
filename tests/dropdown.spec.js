@@ -253,7 +253,7 @@ test.describe('Dropdown Tests', () => {
         await Admin.clickSkillsOption();
         await expect(Admin.skillsHeader).toBeVisible();
     });
- 
+
     test('TC071 - Verify that Education option from Qualifications dropdown is clickable on Admin Page', async ({ page }) => {
 
         const Admin = new AdminPage(page);
@@ -262,5 +262,34 @@ test.describe('Dropdown Tests', () => {
         await Admin.clickQualificationsOption();
         await Admin.clickEducationOption();
         await expect(Admin.educationHeader).toBeVisible();
+    });
+
+    test('TC072 - Verify that Licenses option from Qualification dropdown is clickable on Admin Page', async ({ page }) => {
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickQualificationsOption();
+        await Admin.clickLicensesOption();
+        await expect(Admin.licensesHeader).toBeVisible();
+    });
+
+    test('TC073 - Verify that Languages option from Qualification dropdown is clickable on Admin Page', async ({ page }) => {
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickQualificationsOption();
+        await Admin.clickLanguagesOption();
+    });
+
+    test('TC074 - Verify that Memberships option from Qualification dropdown is clickable on Admin Page', async ({ page }) => {
+
+        const Admin = new AdminPage(page);
+
+        await Admin.clickAdminOption();
+        await Admin.clickQualificationsOption();
+        await Admin.clickMembershipsOption();
+        await expect(Admin.membershipsHeader).toBeVisible();
     });
 });

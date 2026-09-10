@@ -12,6 +12,16 @@ class ClaimPage {
         this.assignClaimButton = page.locator(navigationLocators.assignClaimButton);
         this.configurationDropdown = dropDownLocators.configurationDropdown(page);
         this.claimMenu = claimLocators.claimMenu(page);
+        this.claimOption = page.getByRole('link', { name: 'Claim' });
+        this.helpOption = page.getByTitle('Help');
+    }
+
+    async clickHelpOption() {
+        await this.helpOption.click();
+    }
+
+    async clickClaimOption() {
+        await this.claimOption.click();
     }
 
     async isClaimPageVisible() {
